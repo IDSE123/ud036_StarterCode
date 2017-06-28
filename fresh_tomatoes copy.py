@@ -150,38 +150,18 @@ def create_movie_tiles_content(movies):
     return content
 
 
-def open_movies_page(movies, ec_type):
+def open_movies_page(movies):
+    # Create or overwrite the output file
+    output_file = open('fresh_tomatoes.html', 'w')
 
-    #this checks if the call is from the normal hardcodded values 
-    if(ec_type == "normal"):
-        # Create or overwrite the output file
-        output_file = open('fresh_tomatoes.html', 'w')
-
-        # Replace the movie tiles placeholder generated content
-        rendered_content = main_page_content.format(
+    # Replace the movie tiles placeholder generated content
+    rendered_content = main_page_content.format(
         movie_tiles=create_movie_tiles_content(movies))
 
-        # Output the file
-        output_file.write(main_page_head + rendered_content)
-        output_file.close()
+    # Output the file
+    output_file.write(main_page_head + rendered_content)
+    output_file.close()
 
-        # open the output file in the browser (in a new tab, if possible)
-        url = os.path.abspath(output_file.name)
-        webbrowser.open('file://' + url, new=2)
-
-    #this checks if the call is from the api     
-    if(ec_type == "api"):
-        # Create or overwrite the output file
-        output_file = open('fresh_tomatoes_top.html', 'w')
-
-        # Replace the movie tiles placeholder generated content
-        rendered_content = main_page_content.format(
-        movie_tiles=create_movie_tiles_content(movies))
-
-        # Output the file
-        output_file.write(main_page_head + rendered_content)
-        output_file.close()
-
-        # open the output file in the browser (in a new tab, if possible)
-        url = os.path.abspath(output_file.name)
-        webbrowser.open('file://' + url, new=2)
+    # open the output file in the browser (in a new tab, if possible)
+    url = os.path.abspath(output_file.name)
+    webbrowser.open('file://' + url, new=2)
