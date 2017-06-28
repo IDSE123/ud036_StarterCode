@@ -9,4 +9,8 @@ Source code for a Movie Trailer website.
 
 * To generate the html file just run entertainment_center.py after opening IDLE.
 
+* To get the api generated movies(top 5), open entertainment_center_moviedb_api.py and run it.
+
+* The above file will create a webpage fresh_tomatoes_top.html. This will have top five movies fetched from moved api.
+
 
