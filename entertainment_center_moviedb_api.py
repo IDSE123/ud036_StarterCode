@@ -4,7 +4,6 @@ import webbrowser
 import httplib
 import json
 
-
 #conn object to connect to the api
 conn = httplib.HTTPSConnection("api.themoviedb.org")
 payload = "{}"
